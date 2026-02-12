@@ -62,6 +62,11 @@ class RedditPoster(BasePoster):
         manual = kwargs.get("manual", False)
         subreddit_name = kwargs.get("subreddit", "")
 
+        # Auto-fallback to manual mode if PRAW not available
+        if not manual and not self.reddit:
+            print("[yellow]Reddit API not configured. Falling back to manual mode.[/yellow]")
+            manual = True
+
         if manual:
             if sys.platform == "win32":
                 try:
@@ -75,9 +80,6 @@ class RedditPoster(BasePoster):
                 print(f"Please manually post the following to r/{subreddit_name}:")
                 print(body)
             return {"external_id": "manual", "external_url": ""}
-
-        if not self.reddit:
-            raise RuntimeError("Reddit client not initialized. Check credentials and PRAW installation.")
 
         subreddit = self.reddit.subreddit(subreddit_name)
         submission = subreddit.submit(title, selftext=body)

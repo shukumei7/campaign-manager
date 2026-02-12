@@ -312,10 +312,6 @@ def post(channel, draft_id, dry_run, manual):
             console.print(f"[green]Dry run OK: '{title}' -> r/{subreddit}[/green]")
             return
 
-        if not poster.is_configured() and not manual:
-            console.print("[yellow]Reddit API not configured. Use --manual or set credentials in .env[/yellow]")
-            manual = True
-
         try:
             result = poster.post(title, body, subreddit=subreddit, manual=manual)
             create_post(draft_id, channel, result.get("external_id"), result.get("external_url"))
@@ -391,7 +387,7 @@ def track(campaign):
             if ch == "reddit":
                 from marketing.trackers.reddit import RedditTracker
 
-                tracker = RedditTracker(env["reddit"])
+                tracker = RedditTracker(env["reddit"].get("user_agent", "campaign-manager:v0.1"))
                 metrics = tracker.fetch_metrics(p["external_id"])
             elif ch == "devto":
                 from marketing.trackers.devto import DevtoTracker
