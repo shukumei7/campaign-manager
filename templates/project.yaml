@@ -1,0 +1,34 @@
+# Campaign Manager - Project Configuration
+# Fill in your product details below
+
+product:
+  name: ""
+  tagline: ""
+  url: ""
+  description: ""
+  category: ""  # e.g. developer-tools, saas, productivity
+
+audience:
+  primary: ""           # e.g. "indie developers", "content creators"
+  pain_points:
+    - ""
+  keywords:
+    - ""
+
+channels:
+  reddit:
+    subreddits:
+      - ""              # e.g. SideProject, webdev, programming
+    flair: ""
+  devto:
+    tags:
+      - ""              # e.g. api, webdev, productivity
+    series: ""          # optional Dev.to series name
+
+pricing:
+  model: ""             # e.g. freemium, subscription, pay-per-use
+  tiers:
+    - name: ""
+      price: ""
+      features:
+        - ""
