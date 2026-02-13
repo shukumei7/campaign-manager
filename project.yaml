@@ -1,0 +1,113 @@
+# Campaign Manager - TextKit API
+# Product configuration for marketing campaigns
+# Updated: 2026-02-12 — synced with live site at textkitapi.com
+
+product:
+  name: "TextKit API"
+  tagline: "Ship Text Features in Minutes"
+  url: "https://www.textkitapi.com"
+  description: "9 AI-powered text endpoints: repurpose content across platforms, summarize, rewrite for different audiences, SEO optimize, draft emails from bullets, generate headlines, extract keywords, analyze tone/sentiment, and compare text versions. One API key, simple REST calls, GPT-4o powered."
+  category: "developer-tools"
+
+audience:
+  primary: "indie developers and solopreneurs building apps that need text processing"
+  pain_points:
+    - "OpenAI API is complex to set up and prompt-engineer for simple text tasks"
+    - "Building text features from scratch takes weeks of prompt tuning"
+    - "No simple API for common text operations like summarize, rewrite, generate headlines"
+    - "Existing solutions are enterprise-priced or require ML expertise"
+    - "Content teams need to repurpose across platforms but lack API tools"
+  keywords:
+    - "text API"
+    - "AI API"
+    - "content repurposing API"
+    - "SEO API"
+    - "text processing"
+    - "rewrite API"
+    - "headline generator API"
+    - "developer tools"
+
+channels:
+  reddit:
+    subreddits:
+      - "SideProject"
+      - "webdev"
+      - "programming"
+      - "Entrepreneur"
+      - "indiehackers"
+    flair: "Show & Tell"
+  devto:
+    tags:
+      - "api"
+      - "webdev"
+      - "ai"
+      - "productivity"
+    series: "Building TextKit API"
+
+endpoints:
+  - name: "Repurpose"
+    path: "/api/v1/repurpose"
+    description: "Transform content across platforms"
+  - name: "Summarize"
+    path: "/api/v1/summarize"
+    description: "Extract key points with adjustable length"
+  - name: "Rewrite"
+    path: "/api/v1/rewrite"
+    description: "Adapt text for different audiences/reading levels"
+  - name: "SEO Optimize"
+    path: "/api/v1/seo"
+    description: "Generate meta descriptions and titles"
+  - name: "Email Writer"
+    path: "/api/v1/email"
+    description: "Draft professional emails from bullet points"
+  - name: "Headlines"
+    path: "/api/v1/headlines"
+    description: "Generate engagement-optimized subject lines"
+  - name: "Keywords"
+    path: "/api/v1/keywords"
+    description: "Extract relevant phrases for optimization"
+  - name: "Tone Analysis"
+    path: "/api/v1/tone"
+    description: "Analyze emotional sentiment and tone"
+  - name: "Compare"
+    path: "/api/v1/compare"
+    description: "Evaluate differences between text versions"
+
+pricing:
+  model: "tiered subscriptions with daily + per-minute limits"
+  tiers:
+    - name: "Free"
+      price: "$0/mo"
+      features:
+        - "10 requests/day"
+        - "2 requests/minute"
+        - "All 9 endpoints"
+        - "No credit card required"
+    - name: "Basic"
+      price: "$9/mo"
+      features:
+        - "100 requests/day"
+        - "10 requests/min"
+        - "All 9 endpoints"
+        - "Email support"
+    - name: "Pro"
+      price: "$29/mo"
+      features:
+        - "500 requests/day"
+        - "30 requests/min"
+        - "All 9 endpoints"
+        - "Priority support"
+    - name: "Ultra"
+      price: "$79/mo"
+      features:
+        - "2,000 requests/day"
+        - "60 requests/min"
+        - "All 9 endpoints"
+        - "Priority support"
+    - name: "Mega"
+      price: "$199/mo"
+      features:
+        - "Unlimited daily"
+        - "120 requests/min"
+        - "All 9 endpoints"
+        - "Dedicated support"
