@@ -49,3 +49,8 @@ Try it free at [textkitapi.com](https://www.textkitapi.com) — no credit card, 
 Questions:
 1. How many headline variations do you write before picking one for a campaign?
 2. Do you use any tools for headline generation or tone analysis, or is it all manual brainstorming?
+
+## Posting Notes
+- **Self-promotion rules:** Heavily restricted. Direct product promotion is removed and can result in bans. Blog links must provide insights in the post itself.
+- **Strategy:** Rework as a discussion/question post about headline A/B testing workflows. Remove direct product links from body. Mention TextKit only in comments if someone asks "what tool do you use?"
+- **Account requirements:** Active participation in r/marketing discussions required. 1.3M+ member sub with strict moderation.

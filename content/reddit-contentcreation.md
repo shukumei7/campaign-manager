@@ -49,3 +49,8 @@ Try it free at [textkitapi.com](https://www.textkitapi.com) — no credit card, 
 Questions for this sub:
 1. How long does it take you to repurpose one piece of content across all your platforms?
 2. Are you using any tools for this, or is it all manual rewriting?
+
+## Posting Notes
+- **Self-promotion rules:** Most permissive of the target subreddits. Self-promotion appears accepted with Reddit's 90/10 rule (90% genuine participation, 10% promotional).
+- **Strategy:** Can post as standalone — verify sidebar rules before posting. Soft-sell tone of the draft should be fine.
+- **Account requirements:** Check subreddit sidebar for minimum karma/age requirements.

@@ -46,3 +46,8 @@ Get it at [textkitapi.com](https://www.textkitapi.com) — try it free, no credi
 Two questions:
 1. What's the most repetitive editing task you do for clients?
 2. Are you using any tools to speed up mechanical rewrites, or is it all manual?
+
+## Posting Notes
+- **Self-promotion rules:** No general self-promotion. Tool/resource sharing only in the bi-weekly feedback/critique thread or monthly accountability thread.
+- **Strategy:** Post in the designated bi-weekly thread, OR rework as a discussion post about repetitive editing workflows (mention tool only when asked in comments).
+- **Account requirements:** Must be active community member. No accounts that exist solely to promote.

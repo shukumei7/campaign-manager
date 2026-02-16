@@ -42,3 +42,8 @@ Try it free at [textkitapi.com](https://www.textkitapi.com) — no credit card n
 Two questions:
 1. How much are you spending per month on copywriting or email marketing tools?
 2. Do you write your own marketing emails, or have you found a better system?
+
+## Posting Notes
+- **Self-promotion rules:** Standalone promotional posts are removed. Self-promotion is restricted to the weekly "Promote Your Business" thread.
+- **Strategy:** Post in the weekly promotion thread, OR rework as a genuine question/discussion post (remove direct product links from body, mention tool only in comments if asked).
+- **Account requirements:** Active community participation expected before posting.

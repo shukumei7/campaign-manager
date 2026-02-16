@@ -50,3 +50,8 @@ Try it free at [textkitapi.com](https://www.textkitapi.com) — no signup fricti
 Questions:
 1. How much time do you spend promoting each blog post after you publish?
 2. Do you repurpose content manually, or are you using tools to speed it up?
+
+## Posting Notes
+- **Self-promotion rules:** Allowed but heavily regulated. 80/20 principle — 80% participation as normal member, 20% promotional. Links must provide value.
+- **Strategy:** Can post as standalone if account has participation history in r/Blogging. Soft-sell approach of the draft fits well. Keep product mention brief, lead with the workflow story.
+- **Account requirements:** Active community member with visible comment/post history in the subreddit.

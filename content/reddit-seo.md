@@ -49,3 +49,8 @@ Try it free at [textkitapi.com](https://www.textkitapi.com) — no credit card, 
 Questions:
 1. How long does it take you to write meta descriptions for a batch of blog posts?
 2. Are you using any tools for this, or is it all manual?
+
+## Posting Notes
+- **Self-promotion rules:** Limited. 10:1 ratio minimum (10 genuine contributions per 1 promotional post). Account age 60+ days required.
+- **Strategy:** Build subreddit reputation first with genuine SEO advice/comments. Post this draft only after establishing credibility. Expect skepticism — be ready to engage authentically in comments.
+- **Account requirements:** 60+ day old account, 50-500+ combined karma, visible participation history.
