@@ -19,10 +19,39 @@ def generate_brief() -> dict:
         if pain:
             angles.append(f"How {product.get('name', 'our product')} solves: {pain}")
 
+    # Process audience segments
+    segments = audience.get("segments", [])
+    segments_data = []
+    segment_angles = {}
+    interfaces_map = {iface["name"]: iface for iface in product.get("interfaces", [])}
+
+    for segment in segments:
+        segment_id = segment.get("id", "")
+        label = segment.get("label", "")
+        pain_points_seg = segment.get("pain_points", [])
+        keywords_seg = segment.get("keywords", [])
+        preferred_interface = segment.get("preferred_interface", "")
+
+        segments_data.append({
+            "id": segment_id,
+            "label": label,
+            "pain_points": [p for p in pain_points_seg if p],
+            "keywords": [k for k in keywords_seg if k],
+            "preferred_interface": preferred_interface,
+        })
+
+        # Generate per-segment angles
+        seg_angles = []
+        for pain in pain_points_seg:
+            if pain:
+                seg_angles.append(f"How TextKit {preferred_interface} solves: {pain}")
+        segment_angles[segment_id] = seg_angles
+
     return {
         "product_summary": {
             "name": product.get("name", ""),
             "tagline": product.get("tagline", ""),
+            "tagline_general": product.get("tagline_general", ""),
             "url": product.get("url", ""),
             "description": product.get("description", ""),
             "category": product.get("category", ""),
@@ -32,6 +61,7 @@ def generate_brief() -> dict:
             "pain_points": [p for p in pain_points if p],
             "keywords": [k for k in audience.get("keywords", []) if k],
         },
+        "audience_segments": segments_data,
         "channel_strategy": {
             "reddit": {
                 "subreddits": [s for s in channels.get("reddit", {}).get("subreddits", []) if s],
@@ -47,6 +77,7 @@ def generate_brief() -> dict:
             "tiers": pricing.get("tiers", []),
         },
         "suggested_angles": angles,
+        "segment_angles": segment_angles,
     }
 
 
@@ -71,7 +102,9 @@ def format_brief_markdown(brief: dict) -> str:
 
     ps = brief["product_summary"]
     lines.append(f"## Product: {ps['name']}")
-    if ps["tagline"]:
+    if ps.get("tagline") and ps.get("tagline_general"):
+        lines.append(f"*Dev: {ps['tagline']}* | *General: {ps['tagline_general']}*\n")
+    elif ps.get("tagline"):
         lines.append(f"*{ps['tagline']}*\n")
     if ps["url"]:
         lines.append(f"**URL:** {ps['url']}")
@@ -92,6 +125,20 @@ def format_brief_markdown(brief: dict) -> str:
     if ta["keywords"]:
         lines.append(f"**Keywords:** {', '.join(ta['keywords'])}\n")
 
+    # Add audience segments section
+    if brief.get("audience_segments"):
+        lines.append("## Audience Segments")
+        for segment in brief["audience_segments"]:
+            lines.append(f"### {segment['label']}")
+            lines.append(f"**Preferred Interface:** {segment['preferred_interface']}\n")
+            if segment["pain_points"]:
+                lines.append("**Pain Points:**")
+                for p in segment["pain_points"]:
+                    lines.append(f"- {p}")
+                lines.append("")
+            if segment["keywords"]:
+                lines.append(f"**Keywords:** {', '.join(segment['keywords'])}\n")
+
     cs = brief["channel_strategy"]
     lines.append("## Channel Strategy")
     if cs["reddit"]["subreddits"]:
@@ -105,6 +152,21 @@ def format_brief_markdown(brief: dict) -> str:
         for angle in brief["suggested_angles"]:
             lines.append(f"- {angle}")
         lines.append("")
+
+    # Add segment-specific angles section
+    if brief.get("segment_angles"):
+        lines.append("## Segment-Specific Angles")
+        for segment_id, angles in brief["segment_angles"].items():
+            # Find segment label
+            segment_label = segment_id
+            for seg in brief.get("audience_segments", []):
+                if seg["id"] == segment_id:
+                    segment_label = seg["label"]
+                    break
+            lines.append(f"### {segment_label}")
+            for angle in angles:
+                lines.append(f"- {angle}")
+            lines.append("")
 
     pr = brief["pricing_summary"]
     if pr["model"]:

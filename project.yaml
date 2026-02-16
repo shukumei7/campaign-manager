@@ -5,9 +5,20 @@
 product:
   name: "TextKit API"
   tagline: "Ship Text Features in Minutes"
+  tagline_general: "AI Text Tools for Everyone"
   url: "https://www.textkitapi.com"
   description: "9 AI-powered text endpoints: repurpose content across platforms, summarize, rewrite for different audiences, SEO optimize, draft emails from bullets, generate headlines, extract keywords, analyze tone/sentiment, and compare text versions. One API key, simple REST calls, GPT-4o powered."
   category: "developer-tools"
+  interfaces:
+    - name: "API"
+      description: "REST endpoints for developers"
+      target: "developers"
+    - name: "Studio"
+      description: "Web UI at textkitapi.com/studio.html — no code needed"
+      target: "content creators, marketers, small business owners"
+    - name: "Chrome Extension"
+      description: "Right-click text tools in any webpage"
+      target: "freelance writers, students, everyday users"
 
 audience:
   primary: "indie developers and solopreneurs building apps that need text processing"
@@ -26,6 +37,80 @@ audience:
     - "rewrite API"
     - "headline generator API"
     - "developer tools"
+  segments:
+    - id: developers
+      label: "Indie Developers & Solopreneurs"
+      pain_points:
+        - "OpenAI API is complex to set up and prompt-engineer for simple text tasks"
+        - "Building text features from scratch takes weeks of prompt tuning"
+        - "No simple API for common text operations like summarize, rewrite, generate headlines"
+        - "Existing solutions are enterprise-priced or require ML expertise"
+      keywords:
+        - "text API"
+        - "AI API"
+        - "content repurposing API"
+        - "developer tools"
+      preferred_interface: "API"
+    - id: content_creators
+      label: "Content Creators"
+      pain_points:
+        - "Repurposing one blog post for 5 platforms takes hours of manual rewriting"
+        - "Maintaining consistent tone across different formats is exhausting"
+        - "Hiring a VA for content repurposing costs $500+/month"
+      keywords:
+        - "content repurposing tool"
+        - "AI content tool"
+        - "blog to social media"
+        - "repurpose content"
+      preferred_interface: "Studio"
+    - id: social_media_managers
+      label: "Social Media Managers"
+      pain_points:
+        - "Writing dozens of headline variations for A/B testing is tedious"
+        - "Matching brand voice across platforms is hard without a tool"
+        - "Need quick tone analysis before posting"
+      keywords:
+        - "headline generator"
+        - "AI social media tool"
+        - "tone analyzer"
+        - "brand voice tool"
+      preferred_interface: "Studio"
+    - id: small_business_owners
+      label: "Small Business Owners"
+      pain_points:
+        - "Professional copywriting costs $50-200 per email"
+        - "SEO feels like a foreign language"
+        - "Writing marketing emails takes hours away from running the business"
+      keywords:
+        - "AI email writer"
+        - "small business AI tool"
+        - "SEO tool for small business"
+        - "cheap copywriting alternative"
+      preferred_interface: "Studio"
+    - id: freelance_writers
+      label: "Freelance Writers"
+      pain_points:
+        - "Rewriting the same content at different reading levels is tedious grunt work"
+        - "Keyword extraction for SEO articles is manual and error-prone"
+        - "Clients want multiple draft versions but only pay for one"
+      keywords:
+        - "AI rewriting tool"
+        - "freelance writing tool"
+        - "reading level adjuster"
+        - "keyword extraction"
+      preferred_interface: "Chrome Extension"
+    - id: students
+      label: "Students & Researchers"
+      pain_points:
+        - "Summarizing long research papers takes forever"
+        - "Rewriting notes for different class formats is repetitive"
+        - "Comparing draft versions manually is painful"
+      keywords:
+        - "AI summarizer"
+        - "paper summarizer"
+        - "text comparison tool"
+        - "rewrite tool for students"
+      preferred_interface: "Chrome Extension"
 
 channels:
   reddit:
@@ -35,6 +120,14 @@ channels:
       - "programming"
       - "Entrepreneur"
       - "indiehackers"
+      - "SmallBusiness"
+      - "marketing"
+      - "freelanceWriters"
+      - "ContentCreation"
+      - "Blogging"
+      - "SEO"
+      - "socialmedia"
+      - "copywriting"
     flair: "Show & Tell"
   devto:
     tags:
