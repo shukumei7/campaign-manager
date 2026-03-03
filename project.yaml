@@ -134,6 +134,9 @@ channels:
       - "Blogging"
       - "SEO"
       - "socialmedia"
+      # Etsy pivot track
+      - "Etsy"
+      - "EtsySellers"
     flair: "Show & Tell"
   devto:
     tags:
@@ -333,7 +336,29 @@ campaign_history:
       - r/SideProject       # account likely flagged, wrong audience anyway
       - r/OnlineIncomeHustle  # wrong audience for this product
 
+    etsy_track:
+      # Account age warning: Psychological-Ad9408 is new/auto-generated.
+      # r/Etsy and r/EtsySellers require 30+ days of seller-community participation.
+      # Post drafts exist — hold until account aged or use a different account.
+      - subreddit: r/Etsy
+        draft: content/reddit-etsy.md
+        status: ready_to_post
+        account_requirement: 30+ days, some seller activity in history
+      - subreddit: r/EtsySellers
+        draft: content/reddit-etsysellers.md
+        status: ready_to_post
+        account_requirement: 30+ days
+      - subreddit: r/Entrepreneur
+        draft: content/reddit-entrepreneur-etsy.md
+        status: ready_to_post
+        account_requirement: 30+ days
+
   next_actions:
+    - Post Etsy tool to r/Etsy, r/EtsySellers, r/Entrepreneur (see etsy_track — account age required)
+    - Deploy Zapier app (see textkit-api/zapier/DEPLOY.md — requires zapier login in browser)
+    - Create 5 Zap templates in Zapier developer portal (content in zapier/ZAP_TEMPLATES.md)
+    - Submit Zapier app for public listing (copy in zapier/LISTING.md)
+    - 2-week checkpoint: measure which channel (Zapier vs Etsy tool) produced paid signups
     - Launch on Product Hunt
     - Post on IndieHackers with founder story
     - Build LinkedIn presence targeting content marketing audience
