@@ -1,6 +1,6 @@
 # Campaign Manager - TextKit API
 # Product configuration for marketing campaigns
-# Updated: 2026-02-12 — synced with live site at textkitapi.com
+# Updated: 2026-02-22 — synced with live site at textkitapi.com
 
 product:
   name: "TextKit API"
@@ -19,6 +19,13 @@ product:
     - name: "Chrome Extension"
       description: "Right-click text tools in any webpage"
       target: "freelance writers, students, everyday users"
+
+spotlight:
+  hero_endpoint: "repurpose"
+  reason: "Zero external API usage despite 454 page views — discovery gap. All content drafts already lead with repurpose. Push this as the identity endpoint."
+  hook: "Turn one blog post into 5 platform versions in 90 seconds"
+  demo_path: "/studio.html"
+  campaign_priority: "content_creators, social_media_managers, bloggers"
 
 audience:
   primary: "indie developers and solopreneurs building apps that need text processing"
@@ -140,6 +147,8 @@ endpoints:
   - name: "Repurpose"
     path: "/api/v1/repurpose"
     description: "Transform content across platforms"
+    featured: true
+    hook: "Blog → tweet thread, email → LinkedIn post, in seconds"
   - name: "Summarize"
     path: "/api/v1/summarize"
     description: "Extract key points with adjustable length"
@@ -203,3 +212,130 @@ pricing:
         - "120 requests/min"
         - "All 9 endpoints"
         - "Dedicated support"
+
+live_stats:
+  as_of: "2026-03-03"
+  page_views_total: 616
+  page_views_today: 2
+  registered_users_total: 4  # users 1-3 are test/dev seeds; only 2 are real
+  real_users:
+    - email: allbate@gmail.com
+      tier: FREE
+      last_used: "2026-02-16"
+      endpoints_used: [seo/meta]
+    - email: cwsqer02@gmail.com
+      tier: FREE
+      last_used: "2026-02-19"
+      endpoints_used: [summarize, rewrite, keywords]
+  api_requests_total: 46
+  error_rate_pct: 2.2
+  top_page: "/index.html (424 views)"
+  funnel_note: "616 views → 37 login → 21 register → 2 real signups (~0.3% conversion). Landing page CTA is the bottleneck."
+  endpoint_usage_external:
+    summarize: 12   # most used by real + demo users
+    keywords: 9
+    rewrite: 7
+    headlines: 5
+    tone: 4
+    seo: 4
+    email: 3
+    repurpose: 2    # zero real-user usage; only local-dev test calls
+    compare: 1
+  audience_signal: >
+    Both real signups are content users (SEO, rewrite, keywords), not API developers.
+    Studio/no-code angle has stronger product-market fit than developer API angle.
+
+campaign_history:
+
+  posts:
+    - id: reddit-sideproject-1
+      platform: reddit
+      subreddit: r/SideProject
+      title: "I productized my OpenAI boilerplate into 9 text endpoints"
+      url: "https://www.reddit.com/r/SideProject/comments/1r4594u/"
+      posted_at: "2026-02-13"
+      account: Psychological-Ad9408
+      result:
+        score: 1
+        comments: 1
+        traffic_impact: none
+      notes: >
+        New auto-generated Reddit account (adjective+noun+numbers) likely suppressed by spam
+        filter. No flair set. One genuine positive comment, no follow-through. Score 1 after
+        18 days means algorithm never surfaced it.
+
+    - id: devto-launch-1
+      platform: devto
+      url: "https://dev.to/kit2026/i-stopped-prompt-engineering-the-same-text-features-and-turned-them-into-9-api-endpoints-571m"
+      title: "I stopped prompt-engineering the same text features and turned them into 9 API endpoints"
+      posted_at: "2026-02-13"
+      account: kit2026
+      result:
+        reactions: 0
+        comments: 0
+        traffic_impact: none
+      notes: >
+        New Dev.to account, zero followers. Tags (#ai #api #productivity #webdev) are
+        high-competition — new articles buried instantly. No organic discovery without
+        existing follower base or early reactions. Should update tags to #showdev #buildinpublic.
+
+    - id: reddit-onlineincomehustle-1
+      platform: reddit
+      subreddit: r/OnlineIncomeHustle
+      title: "I was spending 6 hours repurposing one blog post across platforms. This tool cut it to 20 minutes."
+      url: "https://www.reddit.com/r/OnlineIncomeHustle/comments/1rif6mz/"
+      posted_at: "2026-03-02"
+      account: Psychological-Ad9408
+      result:
+        score: 3
+        comments: 2
+        traffic_impact: none
+      notes: >
+        Wrong audience — r/OnlineIncomeHustle is make-money-online culture, not content
+        creators or API developers. One positive reply, one competitor mention (PostermyWall).
+        Writing skewed too promotional. No traffic spike.
+
+  lessons_learned:
+    - Reddit account age and karma are critical. Psychological-Ad9408 is auto-generated
+      and new — posts are filtered regardless of content quality.
+    - Dev.to cold publishing into high-competition tags produces zero views without followers.
+    - Developer-focused channels (r/SideProject, Dev.to) are misaligned with actual users.
+      Real signups are content users, not API developers.
+    - Audience mismatch is the core issue. Content has been targeting developers while
+      real traction is with content creators using Studio.
+
+  channel_strategy:
+    priority:
+      - channel: Product Hunt
+        angle: "Full SaaS tool launch — free tier, Studio UI, 9 endpoints"
+        status: not_started
+        why: "Standard launch channel for this product type. No follower requirement. Gets press and early adopters."
+
+      - channel: IndieHackers
+        angle: "Founder story — built a text API after writing the same boilerplate 5 times"
+        status: not_started
+        why: "Supportive community, works for new accounts, rewards authenticity."
+
+      - channel: LinkedIn
+        angle: "Studio/no-code workflow for content managers and marketers"
+        status: not_started
+        why: "Matches real user profile. Repurposing angle resonates with professional content audience."
+
+    hold_until_account_aged:
+      - r/ContentCreation   # needs participation history
+      - r/Blogging          # needs participation history
+      - r/marketing         # strict moderation, bans new promotional accounts
+      - r/SEO               # 60+ day account age required
+      - r/freelanceWriters  # bi-weekly tool thread only
+      - r/SmallBusiness     # weekly promotion thread only
+
+    do_not_retry:
+      - r/SideProject       # account likely flagged, wrong audience anyway
+      - r/OnlineIncomeHustle  # wrong audience for this product
+
+  next_actions:
+    - Launch on Product Hunt
+    - Post on IndieHackers with founder story
+    - Build LinkedIn presence targeting content marketing audience
+    - Fix landing page conversion (0.3% visitor-to-signup is the bottleneck)
+    - Add referrer tracking to page_views endpoint so traffic sources are identifiable
